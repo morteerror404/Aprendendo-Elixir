@@ -160,7 +160,9 @@ A "váriavel" x não existe, nós casamos a **String** x com o valor 10. Mas ele
 
 Na prática, imagine que você fez uma relação de preços de produtos em um mercado, ou simplificando, uma lista.
 
-Vamos usar um exemplo em python
+Vamos usar dois exemplos 
+
+Em python: 
 ```python 
 mercado = {"banana": 2.50, "sabao": 0.50, "refrigerante": 8.00} 
 ```
@@ -168,7 +170,7 @@ mercado = {"banana": 2.50, "sabao": 0.50, "refrigerante": 8.00}
 No Elixir ficará assim: 
 
 ```ex
-precos_originais = [banana: 2.50, sabao: 0.50, refrigerante: 8.00]
+mercado = [banana: 2.50, sabao: 0.50, refrigerante: 8.00]
 ```
 
 Vamos supor uma promoção, e ver como ficaria em cada linguagem: 
@@ -198,4 +200,4 @@ Essa é a grande sacada! No Python, o objeto mercado foi mutado (alterado no lug
 
 *"Mas se eu ficar criando listas novas, a memória do meu PC vai acabar!"*
 
-- O BEAM é esperto. Ele não copia a lista inteira. Ele apenas cria um novo "nó" para a banana e reaproveita o resto da lista (sabão e refrigerante) na memória. É como se a nova lista fosse um "puxadinho" da antiga. Como o mercado original nunca muda, se você tiver 100 processos "vendedores" consultando o preço ao mesmo tempo, nenhum deles corre o risco de ler um valor pela metade ou um valor que mudou no meio da consulta. **Zero erros de disputa de dados.**
+O BEAM é esperto. Ele não copia a lista inteira. Ele apenas cria um novo "nó" para a banana, e reaproveita o resto da lista (sabão e refrigerante) na memória. É como se a nova lista fosse um "puxadinho" da antiga. Como o mercado original nunca muda, se você tiver 100 processos "vendedores" consultando o preço ao mesmo tempo, nenhum deles corre o risco de ler um valor pela metade ou um valor que mudou no meio da consulta. **Zero erros de disputa de dados.**
