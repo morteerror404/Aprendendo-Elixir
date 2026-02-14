@@ -386,6 +386,50 @@ Se quisermos somar dois números e multiplicar o resultado por 2:
 # Resultado: 20
 ```
 
+### 6. Listas e Tuplas
+
+### Listas (`[]`)
+São listas encadeadas. Excelentes para coleções onde você adiciona ou remove itens frequentemente.
+* **Operadores:** `++` (adicionar), `--` (remover).
+* **Acesso:** `hd(lista)` pega o primeiro, `tl(lista)` pega o resto.
+* **Performance:** Contar itens com `length/1` é lento em listas gigantes.
+
+São listas encadeadas (linked lists). Cada elemento aponta para o próximo.
+
+- **Concatenação:** Use ``++`` para juntar e ``--`` para remover elementos.
+
+- **Imutabilidade:** Operadores de lista nunca modificam a lista existente; eles sempre retornam uma nova.
+
+- **Head e Tail:** A "cabeça" (hd) é o primeiro elemento, e a "cauda" (tl) é o restante da lista.
+
+- **Performance:** Acessar o tamanho da lista (length/1) é uma operação linear (fica mais lenta conforme a lista cresce), pois o Elixir precisa percorrer todos os itens.
+
+```ex
+lista = [1, 2, 3]
+hd(lista) # 1
+tl(lista) # [2, 3]
+```
+
+### Tuplas (`{}`)
+Armazenadas de forma contígua. Ideais para estruturas de tamanho fixo.
+* **Acesso:** `elem(tupla, indice)` é instantâneo.
+* **Tagged Tuples:** Muito usadas para retornos de funções: `{:ok, resultado}`.
+
+Tuplas armazenam elementos de forma contígua na memória.
+
+- Acesso Rápido: Obter o tamanho (tuple_size/2) ou acessar um elemento pelo índice (elem/2) é muito rápido (tempo constante).
+
+- Modificação Cara: Como são contíguas, mudar um elemento (put_elem/3) exige a criação de uma cópia da tupla inteira na memória.
+
+- Uso Comum: São usadas para retornos fixos, como as Tagged Tuples para indicar sucesso ou erro: {:ok, valor} ou {:error, motivo}.
+
+```ex
+tupla = {:ok, "hello"}
+elem(tupla, 1) # "hello"
+```
+
+> **Regra de ouro:** Se o número de elementos pode variar, use **Listas**. Se for fixo (como uma resposta de banco de dados), use **Tuplas**.
+
 # 3. Trabalhado com Funções e Fluxos
 
 No Elixir, a forma como estruturamos o código e tomamos decisões é um pouco diferente das linguagens imperativas como Python ou C.
@@ -463,48 +507,3 @@ end
 ```
 
 ---
-
-## 6. Listas e Tuplas
-
-### Listas (`[]`)
-São listas encadeadas. Excelentes para coleções onde você adiciona ou remove itens frequentemente.
-* **Operadores:** `++` (adicionar), `--` (remover).
-* **Acesso:** `hd(lista)` pega o primeiro, `tl(lista)` pega o resto.
-* **Performance:** Contar itens com `length/1` é lento em listas gigantes.
-
-São listas encadeadas (linked lists). Cada elemento aponta para o próximo.
-
-- **Concatenação:** Use ``++`` para juntar e ``--`` para remover elementos.
-
-- **Imutabilidade:** Operadores de lista nunca modificam a lista existente; eles sempre retornam uma nova.
-
-- **Head e Tail:** A "cabeça" (hd) é o primeiro elemento, e a "cauda" (tl) é o restante da lista.
-
-- **Performance:** Acessar o tamanho da lista (length/1) é uma operação linear (fica mais lenta conforme a lista cresce), pois o Elixir precisa percorrer todos os itens.
-
-```ex
-lista = [1, 2, 3]
-hd(lista) # 1
-tl(lista) # [2, 3]
-```
-
-### Tuplas (`{}`)
-Armazenadas de forma contígua. Ideais para estruturas de tamanho fixo.
-* **Acesso:** `elem(tupla, indice)` é instantâneo.
-* **Tagged Tuples:** Muito usadas para retornos de funções: `{:ok, resultado}`.
-
-Tuplas armazenam elementos de forma contígua na memória.
-
-- Acesso Rápido: Obter o tamanho (tuple_size/2) ou acessar um elemento pelo índice (elem/2) é muito rápido (tempo constante).
-
-- Modificação Cara: Como são contíguas, mudar um elemento (put_elem/3) exige a criação de uma cópia da tupla inteira na memória.
-
-- Uso Comum: São usadas para retornos fixos, como as Tagged Tuples para indicar sucesso ou erro: {:ok, valor} ou {:error, motivo}.
-
-```ex
-tupla = {:ok, "hello"}
-elem(tupla, 1) # "hello"
-```
-
-
-> **Regra de ouro:** Se o número de elementos pode variar, use **Listas**. Se for fixo (como uma resposta de banco de dados), use **Tuplas**.
