@@ -37,5 +37,10 @@ D:.
 Vamos começar a escrever nosso primeiro Hello Word:
 
 ```ex
+defmodule LabZero do
+  def hello do
+    IO.puts("Olá Mundo ! O laboratório está vivo. Vamos aprender Elixir juntos!")
+  end
+end
 
 ```
