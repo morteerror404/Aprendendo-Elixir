@@ -388,14 +388,6 @@ Se quisermos somar dois números e multiplicar o resultado por 2:
 
 # 3. Trabalhado com Funções e Fluxos
 
-Para fechar com chave de ouro o seu guia de Elixir, precisamos falar sobre como organizar o acesso às funções e como o fluxo de controle funciona (ou melhor, como ele é substituído) em uma linguagem funcional.
-
-Aqui está o conteúdo estruturado para o seu `README.md`:
-
----
-
-# 3. Organização e Fluxo de Controle
-
 No Elixir, a forma como estruturamos o código e tomamos decisões é um pouco diferente das linguagens imperativas como Python ou C.
 
 ## Funções Públicas vs. Privadas
