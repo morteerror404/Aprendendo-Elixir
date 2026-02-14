@@ -19,7 +19,7 @@ Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_do
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at <https://hexdocs.pm/aprendendo_elixir>.
 
-# Primeioros comandos
+# Primeiros comandos
 
 Para criar um projeto em elixir, precisamos utilizar o comando **mix new** projeto_maluco. Lembrando que o elixir usa snake_case. Se você veio de outras linguagens, esqueça completamente o camelCase. 
 
