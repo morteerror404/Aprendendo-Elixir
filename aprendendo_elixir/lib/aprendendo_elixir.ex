@@ -1,18 +1,5 @@
-defmodule AprendendoElixir do
-  @moduledoc """
-  Documentation for `AprendendoElixir`.
-  """
-
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> AprendendoElixir.hello()
-      :world
-
-  """
+defmodule LabZero do
   def hello do
-    :world
+    IO.puts("Olá Mundo ! O laboratório está vivo. Vamos aprender Elixir juntos!")
   end
 end
