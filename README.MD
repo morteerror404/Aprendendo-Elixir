@@ -472,13 +472,6 @@ São listas encadeadas. Excelentes para coleções onde você adiciona ou remove
 * **Acesso:** `hd(lista)` pega o primeiro, `tl(lista)` pega o resto.
 * **Performance:** Contar itens com `length/1` é lento em listas gigantes.
 
-### Tuplas (`{}`)
-Armazenadas de forma contígua. Ideais para estruturas de tamanho fixo.
-* **Acesso:** `elem(tupla, indice)` é instantâneo.
-* **Tagged Tuples:** Muito usadas para retornos de funções: `{:ok, resultado}`.
-
-**Listas ([])**
-
 São listas encadeadas (linked lists). Cada elemento aponta para o próximo.
 
 - **Concatenação:** Use ``++`` para juntar e ``--`` para remover elementos.
@@ -495,7 +488,10 @@ hd(lista) # 1
 tl(lista) # [2, 3]
 ```
 
-**Tuplas ({})**
+### Tuplas (`{}`)
+Armazenadas de forma contígua. Ideais para estruturas de tamanho fixo.
+* **Acesso:** `elem(tupla, indice)` é instantâneo.
+* **Tagged Tuples:** Muito usadas para retornos de funções: `{:ok, resultado}`.
 
 Tuplas armazenam elementos de forma contígua na memória.
 
@@ -509,5 +505,6 @@ Tuplas armazenam elementos de forma contígua na memória.
 tupla = {:ok, "hello"}
 elem(tupla, 1) # "hello"
 ```
+
 
 > **Regra de ouro:** Se o número de elementos pode variar, use **Listas**. Se for fixo (como uma resposta de banco de dados), use **Tuplas**.
