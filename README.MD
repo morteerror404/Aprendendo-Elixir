@@ -32,7 +32,7 @@ D:.
 
 # Por onde começar ? 
 
-1. Abra o arquivo lib/lab_zero.ex que o Mix criou. Apague o que estiver lá
+1. Abra o arquivo lib/aprendendo_elixir.ex que o Mix criou. Apague o que estiver lá
 
 Vamos começar a escrever nosso primeiro Hello Word:
 
